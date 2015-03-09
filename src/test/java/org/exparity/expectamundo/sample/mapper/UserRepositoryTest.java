@@ -4,9 +4,7 @@ import java.util.Date;
 import java.util.concurrent.TimeUnit;
 import org.junit.Test;
 import static org.exparity.dates.en.FluentDate.AUG;
-import static org.exparity.expectamundo.Expectamundo.expect;
-import static org.exparity.expectamundo.Expectamundo.expectThat;
-import static org.exparity.expectamundo.Expectamundo.prototype;
+import static org.exparity.expectamundo.Expectamundo.*;
 
 public class UserRepositoryTest {
 
@@ -26,7 +24,7 @@ public class UserRepositoryTest {
 	@Test
 	public void canGetAll() {
 		User user = new User(USERNAME, FIRST_NAME, SURNAME, DATE_OF_BIRTH);
-		UserRespository repos = new UserRespository();
+		UserRepository repos = new UserRepository();
 		repos.addUser(user);
 		expectThat(repos.getAll()).contains(EXPECTED_USER);
 	}
@@ -34,7 +32,7 @@ public class UserRepositoryTest {
 	@Test
 	public void canGetByUsername() {
 		User user = new User(USERNAME, FIRST_NAME, SURNAME, DATE_OF_BIRTH);
-		UserRespository repos = new UserRespository();
+		UserRepository repos = new UserRepository();
 		repos.addUser(user);
 		expectThat(repos.getUserByUsername(USERNAME)).matches(EXPECTED_USER);
 	}

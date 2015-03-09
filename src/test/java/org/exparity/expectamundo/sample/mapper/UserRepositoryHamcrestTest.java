@@ -3,18 +3,13 @@ package org.exparity.expectamundo.sample.mapper;
 
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
-import org.hamcrest.Matcher;
-import org.hamcrest.Matchers;
+import org.hamcrest.*;
 import org.junit.Test;
 import static org.exparity.dates.en.FluentDate.AUG;
 import static org.exparity.hamcrest.BeanMatchers.hasProperty;
-import static org.exparity.hamcrest.date.DateMatchers.sameDay;
-import static org.exparity.hamcrest.date.DateMatchers.within;
+import static org.exparity.hamcrest.date.DateMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.hasItem;
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.nullValue;
+import static org.hamcrest.Matchers.*;
 
 public class UserRepositoryHamcrestTest {
 
@@ -32,7 +27,7 @@ public class UserRepositoryHamcrestTest {
 	@Test
 	public void canGetAll() {
 		User user = new User(USERNAME, FIRST_NAME, SURNAME, DATE_OF_BIRTH);
-		UserRespository repos = new UserRespository();
+		UserRepository repos = new UserRepository();
 		repos.addUser(user);
 		assertThat(repos.getAll(), hasItem(EXPECTED_USER));
 	}
@@ -40,7 +35,7 @@ public class UserRepositoryHamcrestTest {
 	@Test
 	public void canGetByUsername() {
 		User user = new User(USERNAME, FIRST_NAME, SURNAME, DATE_OF_BIRTH);
-		UserRespository repos = new UserRespository();
+		UserRepository repos = new UserRepository();
 		repos.addUser(user);
 		assertThat(repos.getUserByUsername(USERNAME), is(EXPECTED_USER));
 	}

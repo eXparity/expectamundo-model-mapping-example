@@ -8,7 +8,7 @@
 		<dependency>
 			<groupId>org.exparity</groupId>
 			<artifactId>expectamundo</artifactId>
-			<version>0.9.14</version>
+			<version>0.9.15</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>

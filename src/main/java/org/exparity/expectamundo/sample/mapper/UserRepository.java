@@ -1,18 +1,16 @@
+
 package org.exparity.expectamundo.sample.mapper;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
-public class UserRespository {
+public class UserRepository {
 
-	private Map<String,User> userMap = new HashMap<>();
-	
+	private Map<String, User> userMap = new HashMap<>();
+
 	public List<User> getAll() {
 		return new ArrayList<>(userMap.values());
 	}
-	
+
 	public void addUser(final User user) {
 		this.userMap.put(user.getUsername(), user);
 	}
