@@ -1,4 +1,3 @@
-
 package org.exparity.expectamundo.sample.mapper;
 
 import java.util.Date;
